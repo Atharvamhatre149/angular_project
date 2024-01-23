@@ -1,0 +1,21 @@
+
+  <div class="card">
+    <div class="thumbnail-container">
+      <img class="thumbnail" src="{{cardData.picture}}" alt="">
+      <div class="tags">
+        <div class="tag" *ngFor="let tag of cardData.tags.slice(0, 2)">{{tag}}</div>
+      </div>
+    </div>
+    <div  class="text-container">
+
+      <h2 class="title">
+        {{ cardData.title.slice(0, 12)}}<span *ngIf="cardData.title.length > 12">...</span>
+      </h2>
+
+      <p class="type">Type: {{cardData.type}}</p>
+      <p class="episodes">Episodes: {{cardData.episodes}}</p>
+      <p>status: <span [ngClass]="{ 'finished-status': cardData.status === 'FINISHED', 'status': cardData.status !== 'FINISHED' }">{{cardData.status}}</span></p>
+    </div>
+
+  </div>
+

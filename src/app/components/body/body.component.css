@@ -1,0 +1,18 @@
+
+.card-container{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 3% 8%;
+}
+
+.carditem{
+  /* width: 250px; */
+  margin: 20px 35px;
+  width: 18%; /* Adjust the width as needed */
+  box-sizing: border-box;
+}
+
+
+
