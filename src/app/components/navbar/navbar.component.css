@@ -30,8 +30,10 @@
 }
 
 .searchBtn{
-    padding: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    border: none;
     border-radius: 8px;
-    background-color: rgb(197, 136, 24);
+    background-color: rgb(240, 140, 17);
     font-weight: 600;
 }

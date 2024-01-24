@@ -7,6 +7,10 @@ import { Component, Input } from '@angular/core';
 })
 export class CardComponent {
     @Input() cardData: any;
-
     showFullTitle = false;
+
+    handleImageError(event:Event){
+        const imgElement=event.target as HTMLImageElement;
+        imgElement.src="../../assets/no-poster.png";
+    }
 }

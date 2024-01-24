@@ -70,12 +70,16 @@ p{
   background-color: transparent;
 }
 
+span{
+  background-color: transparent;
+}
+
 
 .finished-status
 {
 
   background-color: green;
-  padding: 2px;
+  padding: 2px 5px;
   border-radius: 5px;
 }
 

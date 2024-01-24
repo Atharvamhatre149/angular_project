@@ -1,7 +1,7 @@
 
   <div class="card">
     <div class="thumbnail-container">
-      <img class="thumbnail" src="{{cardData.picture}}" alt="">
+      <img class="thumbnail" [src]="cardData.picture" (error)="handleImageError($event)" alt="">
       <div class="tags">
         <div class="tag" *ngFor="let tag of cardData.tags.slice(0, 2)">{{tag}}</div>
       </div>
