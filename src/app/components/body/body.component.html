@@ -1,11 +1,15 @@
 
 <div class="card-container">
-  <div class="carditem" *ngFor="let card of filteredData">
+  <div class="carditem" *ngFor="let card of pageData">
     <app-card [cardData]="card"></app-card>
   </div>
 </div>
 
 
 <div class="pagination">
-    <button></button>
+    <button (click)="setPage(1)">1</button>
+    <button class="arrows" (click)="decrementPage()"><</button>
+    <button>{{currentPage}}</button>
+    <button class="arrows" (click)="incrementPage()">></button>
+    <button (click)="setPage(calculateEnd())">{{calculateEnd()}}</button>
 </div>

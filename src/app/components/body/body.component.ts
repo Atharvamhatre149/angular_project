@@ -17,6 +17,13 @@ export class BodyComponent implements OnInit{
 
     constructor(private dataserviceService:DataserviceService){}
 
+    get pageData():any[]{
+
+        const startIndex=(this.currentPage-1)*this.pageSize;
+        const endIndex=startIndex+this.pageSize;
+        return this.filteredData.slice(startIndex,endIndex);
+    }
+
     ngOnInit(): void {
         this.dataserviceService.getFirst100Data().subscribe(data=>{
           this.jsondata=data.slice(0,100);
@@ -56,5 +63,11 @@ export class BodyComponent implements OnInit{
           this.currentPage++;
         }
       }
+
+      calculateEnd():number
+      {
+          return Math.ceil(this.filteredData.length/this.pageSize);
+      }
+
 
 }
