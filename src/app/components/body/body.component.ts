@@ -12,6 +12,8 @@ export class BodyComponent implements OnInit{
     jsondata:any[]=[];
     filteredData:any[]=[];
     searchQuery="";
+    pageSize:number=4;
+    currentPage:number=1;
 
     constructor(private dataserviceService:DataserviceService){}
 
@@ -32,5 +34,27 @@ export class BodyComponent implements OnInit{
             this.filteredData=this.jsondata.filter(card=>
               card.title.toLowerCase().includes(query.toLowerCase()))
         }
+
+      setPage(pageNumber:number)
+      {
+        this.currentPage=pageNumber;
+      }
+
+      decrementPage()
+      {
+        if(this.currentPage>1)
+        {
+          this.currentPage--;
+        }
+      }
+
+      incrementPage()
+      {
+        const totalPages=Math.ceil(this.filteredData.length/this.pageSize);
+        if(this.currentPage<totalPages)
+        {
+          this.currentPage++;
+        }
+      }
 
 }
