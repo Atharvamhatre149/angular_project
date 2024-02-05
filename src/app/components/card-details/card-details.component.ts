@@ -9,6 +9,7 @@ import { DataserviceService } from './../../dataservice.service';
 })
 export class CardDetailsComponent implements OnInit{
 
+    jsondata:any[]=[];
     cardData:any;
 
     constructor(private route:ActivatedRoute,private dataserviceService:DataserviceService){}
@@ -16,8 +17,13 @@ export class CardDetailsComponent implements OnInit{
     ngOnInit(): void {
         this.route.params.subscribe(params =>{
             const cardIndex= +params['index'];
-            
+           
+            this.dataserviceService.getFirst100Data().subscribe(data=>{
+            this.jsondata=data;    
         })
-    }
+            this.cardData=this.jsondata[cardIndex];
+    });
+
+}
 
 }
