@@ -1,7 +1,34 @@
+.searchBox{
+  display: flex;
+  margin: 1% 5%;
+  padding: 0;
+}
+
+.searchText{
+  background-color: white;
+  padding: 5px;
+  margin-right: 8px;
+  border-radius: 5px;
+  color: grey;
+  font-weight: 600;
+  border: none;
+  outline: none;
+  width: 220px;
+}
+
+.searchBtn{
+  padding: 5px 10px;
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  background-color: rgb(240, 140, 17);
+  font-weight: 600;
+}
+
 
 .card-container{
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     flex-direction: row;
     flex-wrap: wrap;
     margin: 0% 2%;
@@ -9,9 +36,14 @@
 
 .carditem{
   /* width: 250px; */
-  margin: 20px 35px;
-  width: 18%; /* Adjust the width as needed */
+  margin: 20px 0;
+  width: 15%; /* Adjust the width as needed */
   box-sizing: border-box;
+}
+
+.carditem:hover{
+  transform: scale(1.05);
+  transition: transform 300ms ease-in;
 }
 
 .pagination {
@@ -29,12 +61,12 @@ button {
   border: none;
   background-color: rgb(240, 140, 17);
   cursor: pointer;
-  font-weight: 800;
+  font-weight: 500;
 
 }
 
 .arrows
 {
-  font-size: 25px;
-  padding: 1px 10px;
+  font-size: 26px;
+  padding: 1px 8px;
 }

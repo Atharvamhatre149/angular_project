@@ -2,6 +2,7 @@
 
 import { DataserviceService } from './../../dataservice.service';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 // import json from "../../../assets/constant.json"
 @Component({
   selector: 'app-body',
@@ -12,34 +13,45 @@ export class BodyComponent implements OnInit{
     jsondata:any[]=[];
     filteredData:any[]=[];
     searchQuery="";
-    pageSize:number=4;
+    pageSize:number=5;
     currentPage:number=1;
+    currentCard:number=0;
 
-    constructor(private dataserviceService:DataserviceService){}
+    constructor(private dataserviceService:DataserviceService, private router:Router){}
+
+    // performSearch(event:Event)
+    // {
+    //   event.preventDefault();
+    //   // console.log("search query: "+this.searchQuery);
+
+    //     this.dataserviceService.searchData(this.searchQuery);
+    // }
 
     get pageData():any[]{
 
         const startIndex=(this.currentPage-1)*this.pageSize;
         const endIndex=startIndex+this.pageSize;
+        this.currentCard=(this.currentPage-1)*5;
         return this.filteredData.slice(startIndex,endIndex);
     }
 
     ngOnInit(): void {
         this.dataserviceService.getFirst100Data().subscribe(data=>{
-          this.jsondata=data.slice(0,100);
+          this.jsondata=data;
           this.filteredData=this.jsondata;
         });
 
-        this.dataserviceService.getSearchData().subscribe(query=>{
+        // this.dataserviceService.getSearchData().subscribe(query=>{
 
-          this.performSearch(query);
-        });
+        //   this.performSearch(query);
+        // });
 
       }
 
-        performSearch(query:String){
+        performSearch(event:Event){
+          event.preventDefault();
             this.filteredData=this.jsondata.filter(card=>
-              card.title.toLowerCase().includes(query.toLowerCase()))
+              card.title.toLowerCase().includes(this.searchQuery.toLowerCase()))
         }
 
       setPage(pageNumber:number)

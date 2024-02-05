@@ -5,35 +5,12 @@
     justify-content: space-between;
 }
 .title{
-    padding: 10px 0 0 2%;
+    padding: 7px 0 0 2%;
     background-clip: text;
       color: transparent;
       font-size: 36px;
     background-image: linear-gradient(319deg, #ffcb43 0%, #ff6425 , #ff0016 100%);
-
-}
-
-.searchBox{
-    padding: 20px 3% 0 0;
-}
-
-.searchText{
-    background-color: white;
-    padding: 5px;
-    margin-right: 8px;
-    border-radius: 5px;
-    color: grey;
-    font-weight: 600;
-    border: none;
-    outline: none;
-    width: 220px;
-}
-
-.searchBtn{
-    padding: 5px 10px;
     cursor: pointer;
-    border: none;
-    border-radius: 8px;
-    background-color: rgb(240, 140, 17);
-    font-weight: 600;
+
 }
+

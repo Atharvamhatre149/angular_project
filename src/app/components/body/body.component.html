@@ -1,7 +1,14 @@
+<div>
+  <div class="searchBox">
+    <form  (ngSubmit)="performSearch($event)" >
+      <input class="searchText" type="text" placeholder="Search..." [(ngModel)]="searchQuery" name="searchQuery">
+      <button class="searchBtn" type="submit">Search</button>
+    </form>
+</div>
 
 <div class="card-container">
-  <div class="carditem" *ngFor="let card of pageData">
-    <app-card [cardData]="card"></app-card>
+  <div class="carditem" *ngFor="let card of pageData; let i=index">
+    <app-card [cardData]="card" [routerLink]="['/card', i+currentCard]"></app-card>
   </div>
 </div>
 
@@ -12,4 +19,5 @@
     <button>{{currentPage}}</button>
     <button class="arrows" (click)="incrementPage()">></button>
     <button (click)="setPage(calculateEnd())">{{calculateEnd()}}</button>
+</div>
 </div>

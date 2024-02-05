@@ -7,13 +7,15 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { BodyComponent } from './components/body/body.component';
 import { CardComponent } from './card/card.component';
 import { FormsModule } from '@angular/forms';
+import { CardDetailsComponent } from './components/card-details/card-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     BodyComponent,
-    CardComponent
+    CardComponent,
+    CardDetailsComponent
   ],
   imports: [
     BrowserModule,

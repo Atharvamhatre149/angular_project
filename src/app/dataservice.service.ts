@@ -14,16 +14,16 @@ export class DataserviceService {
   constructor(private http: HttpClient) { }
 
   getFirst100Data(): Observable<any[]>{
-    return this.http.get<any[]>(this.jsonFileUrl).pipe(map((response:any)=> response.data));
+    return this.http.get<any[]>(this.jsonFileUrl).pipe(map((response:any)=> response.data.slice(0,100)));
   }
 
-  searchData(query:string): void{
-    this.searchDataSubject.next(query);
-  }
+  // searchData(query:string): void{
+  //   this.searchDataSubject.next(query);
+  // }
 
-  getSearchData(): Observable<string>{
-      // console.log("getSearchData:"+this.searchDataSubject);
+  // getSearchData(): Observable<string>{
+  //     // console.log("getSearchData:"+this.searchDataSubject);
 
-      return this.searchDataSubject.asObservable();
-  }
+  //     return this.searchDataSubject.asObservable();
+  // }
 }

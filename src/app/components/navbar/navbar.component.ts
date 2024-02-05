@@ -10,18 +10,13 @@ import { Component } from '@angular/core';
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css'
 })
+
 export class NavbarComponent {
-    searchQuery:string="";
+    
 
     constructor(private dataserviceService:DataserviceService){}
 
-    performSearch(event:Event)
-    {
-      event.preventDefault();
-      // console.log("search query: "+this.searchQuery);
-
-        this.dataserviceService.searchData(this.searchQuery);
-    }
+ 
 
 
 }
