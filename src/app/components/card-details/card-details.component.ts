@@ -20,8 +20,11 @@ export class CardDetailsComponent implements OnInit{
            
             this.dataserviceService.getFirst100Data().subscribe(data=>{
             this.jsondata=data;    
-        })
+            console.log(this.jsondata[cardIndex]);
             this.cardData=this.jsondata[cardIndex];
+        })
+            
+           
     });
 
 }
